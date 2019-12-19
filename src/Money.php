@@ -1,0 +1,77 @@
+<?php
+
+
+namespace VA\Currency;
+
+use InvalidArgumentException;
+
+
+/**
+ * Money - immutable value object
+ *
+ * @copyright Via Aurea, s.r.o.
+ */
+final class Money implements MoneyInterface
+{
+    /** @var int|float */
+    private $amount;
+
+    /** @var CurrencyInterface */
+    private $currency;
+
+
+    /**
+     * Money value object constructor.
+     *
+     * @param int|double      $amount
+     * @param Currency|string $currency
+     */
+    public function __construct($amount, $currency)
+    {
+        if (!is_numeric($amount)) {
+            throw new InvalidArgumentException("Value / amount for money must be a number.");
+        }
+        if (is_string($currency)) {
+            $currency = new Currency($currency);
+        }
+        if (!$currency instanceof CurrencyInterface) {
+            throw new InvalidArgumentException(sprintf("Currency must be an instance of %s or a string.", CurrencyInterface::class));
+        }
+        $this->amount = $amount + 0; // cast to integer or double
+        $this->currency = $currency;
+    }
+
+
+    /**
+     * Get the amount of the value object.
+     *
+     * @return int|double
+     */
+    public function amount()
+    {
+        return $this->amount;
+    }
+
+
+    /**
+     * Get the currency of the value object.
+     *
+     * @return CurrencyInterface
+     */
+    public function currency(): CurrencyInterface
+    {
+        return $this->currency;
+    }
+
+
+    /**
+     * Note: type-casting to string is not supposed to be used for formatting.
+     *
+     * @return string
+     */
+    function __toString()
+    {
+        return (string)$this->amount() . ' ' . $this->currency()->code();
+    }
+
+}

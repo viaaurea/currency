@@ -1,0 +1,36 @@
+{
+  "name": "viaaurea/currency",
+  "description": "Cross-currency money comparison and exchange tool.",
+  "authors": [
+    {
+      "name": "Via Aurea, s.r.o.",
+      "homepage": "https://www.viaaurea.cz/"
+    },
+    {
+      "name": "Andrej Rypák",
+      "email": "andrej.rypak@viaaurea.cz",
+      "role": "maintainer"
+    }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "require-dev": {
+    "nette/tester": "^2",
+    "tracy/tracy": "^2.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "VA\\Currency\\": "src/"
+    },
+    "classmap": [
+      "src/deprecated"
+    ]
+  },
+  "scripts": {
+    "test": "@test:local",
+    "test:local": "tester tests -C"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
