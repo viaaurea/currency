@@ -12,8 +12,13 @@ Use this package to do comparison arithmetic or aggregations on values in differ
 // resolve the service / get an instance
 $cs = $container->get(VA\Currency\CurrencyService::class);
 
+// create a money value object (3 equivalent ways)
+$cs->create(100, 'USD');
+new Money(100, 'USD');
+Money::USD(100);
+
 // exchange / conversion
-$valueInUsd = $cs->create(100, 'USD'); // same as new Money(100, 'USD')
+$valueInUsd = Money::USD(100);
 $valueInEur = $cs->exchange($valueInUsd, 'EUR');
 $valueInEur->amount();
 
@@ -32,6 +37,10 @@ $max = $cs->max($money);
 $min = $cs->min($money);
 $avg = $cs->avg($money);
 ```
+
+> 💡\
+> This package is meant as a **lightweight tool** to exchange, compare and aggregate money value objects.\
+> For a fully fledged robust solution consider using [Money for PHP](https://moneyphp.org/en/stable/).
 
 
 ## Currency Service

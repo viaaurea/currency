@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency;
-
 
 /**
  * Interface for services providing currency exchange facility.
@@ -11,8 +9,6 @@ namespace VA\Currency;
  */
 interface ExchangeServiceInterface
 {
-
-
     /**
      * Changes given money to a new currency.
      *
@@ -21,5 +17,4 @@ interface ExchangeServiceInterface
      * @return MoneyInterface Money value object in the target currency
      */
     public function exchange(MoneyInterface $money, $targetCurrency): MoneyInterface;
-
 }

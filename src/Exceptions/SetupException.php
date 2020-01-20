@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency\Exceptions;
-
 
 use LogicException;
 
@@ -11,5 +9,4 @@ use LogicException;
  */
 class SetupException extends LogicException
 {
-
 }

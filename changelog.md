@@ -16,7 +16,7 @@ All `CurrencyService` methods should work without change, care should be taken w
 - `ExchangeRateProviderInterface::getExchangeRateType` interface method and `StaticExchange::getExchangeRateType` implementation method removed
     - `ExchangeRateProviderInterface::getExchangeRate` must now always return exchange rate quoted _indirectly_
     - the implementation using this feature in `CurrencyService::exchange` has been updated accordingly
-- type of `ExchangeRateProviderInterface::RATE_*` constants has been changed to string, the constant values have been changed too (should not matter if used correctly, i.e. using the constants and not the values)
+- type of `ExchangeRateProviderInterface::RATE_*` constants have been changed to string, the constant values have been changed too (should not matter if used correctly, i.e. using the constants and not the values)
 - `CurrencyExtension` DI extension moved to a more specific namespace
 - `CurrencyExtension` now requires default currency and exchange rate type to be set (defaults have been removed)
 

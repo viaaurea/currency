@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency;
-
 
 /**
  * CurrencyInterface
@@ -11,13 +9,11 @@ namespace VA\Currency;
  */
 interface CurrencyInterface
 {
-
     /**
      * Currency code.
      * Preferably an ISO code, but it's up to you.
      *
      * @return string
      */
-    function code(): string;
-
+    public function code(): string;
 }

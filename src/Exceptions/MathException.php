@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency\Exceptions;
-
 
 use RuntimeException;
 
@@ -11,5 +9,4 @@ use RuntimeException;
  */
 class MathException extends RuntimeException
 {
-
 }

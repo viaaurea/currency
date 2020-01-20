@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency;
-
 
 use VA\Currency\Exceptions\MathException;
 
@@ -15,12 +13,11 @@ use VA\Currency\Exceptions\MathException;
  */
 class MathHelper
 {
-
     /**
      * toNumber( $a )
      * @return float|int
      */
-    static function number($a)
+    public static function number($a)
     {
         if (is_numeric($a)) {
             return $a + 0;
@@ -33,7 +30,7 @@ class MathHelper
      * $a + $b
      * @return float|int
      */
-    static function add($a, $b)
+    public static function add($a, $b)
     {
         return $a + $b;
     }
@@ -43,7 +40,7 @@ class MathHelper
      * $a - $b
      * @return float|int
      */
-    static function sub($a, $b)
+    public static function sub($a, $b)
     {
         return $a - $b;
     }
@@ -53,7 +50,7 @@ class MathHelper
      * $a * $b
      * @return float|int
      */
-    static function mul($a, $b)
+    public static function mul($a, $b)
     {
         return $a * $b;
     }
@@ -63,7 +60,7 @@ class MathHelper
      * $a / $b
      * @return float|int
      */
-    static function div($a, $b)
+    public static function div($a, $b)
     {
         if ($b == 0) { // intentionally ==
             throw new MathException('Division by zero.');
@@ -76,7 +73,7 @@ class MathHelper
      * $a == $b
      * @return bool
      */
-    static function eq($a, $b): bool
+    public static function eq($a, $b): bool
     {
         return $a == $b; // intentionally ==
     }
@@ -86,7 +83,7 @@ class MathHelper
      * $a > $b
      * @return bool
      */
-    static function gt($a, $b): bool
+    public static function gt($a, $b): bool
     {
         return $a > $b;
     }
@@ -96,7 +93,7 @@ class MathHelper
      * $a < $b
      * @return bool
      */
-    static function lt($a, $b): bool
+    public static function lt($a, $b): bool
     {
         return $a < $b;
     }
@@ -106,7 +103,7 @@ class MathHelper
      * $a >= $b
      * @return bool
      */
-    static function gte($a, $b): bool
+    public static function gte($a, $b): bool
     {
         return static::eq($a, $b) || static::gt($a, $b);
     }
@@ -116,9 +113,8 @@ class MathHelper
      * $a <= $b
      * @return bool
      */
-    static function lte($a, $b): bool
+    public static function lte($a, $b): bool
     {
         return static::eq($a, $b) || static::lt($a, $b);
     }
-
 }

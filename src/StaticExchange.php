@@ -1,10 +1,8 @@
 <?php
 
-
 namespace VA\Currency;
 
 use VA\Currency\Exceptions\SetupException;
-
 
 /**
  * Exchange rate provider with static pre-configured rates.
@@ -167,5 +165,4 @@ class StaticExchange implements ExchangeRateProviderInterface
         }
         return [$rate + 0, $amount + 0, $this->rateType];
     }
-
 }

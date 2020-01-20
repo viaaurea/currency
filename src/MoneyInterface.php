@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency;
-
 
 /**
  * MoneyInterface
@@ -11,14 +9,12 @@ namespace VA\Currency;
  */
 interface MoneyInterface
 {
-
-
     /**
      * Get the amount of the value object.
      *
      * @return int|double
      */
-    function amount();
+    public function amount();
 
 
     /**
@@ -26,6 +22,5 @@ interface MoneyInterface
      *
      * @return CurrencyInterface
      */
-    function currency(): CurrencyInterface;
-
+    public function currency(): CurrencyInterface;
 }

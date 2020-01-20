@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency;
-
 
 /**
  * ExchangeRateProviderInterface
@@ -14,7 +12,6 @@ interface ExchangeRateProviderInterface
     const
         RATE_DIRECT = 'd',
         RATE_INDIRECT = 'i';
-
 
     /**
      * Returns the exchange rate for a given currency.
@@ -42,6 +39,5 @@ interface ExchangeRateProviderInterface
      * @param ...$args
      * @return mixed
      */
-    function getExchangeRate(CurrencyInterface $currency /*, CurrencyInterface $from, ...$args */);
-
+    public function getExchangeRate(CurrencyInterface $currency /*, CurrencyInterface $from, ...$args */);
 }

@@ -1,10 +1,8 @@
 <?php
 
-
 namespace VA\Currency;
 
 use InvalidArgumentException;
-
 
 /**
  * Currency - immutable value object
@@ -51,7 +49,7 @@ final class Currency implements CurrencyInterface
     /**
      * @return string
      */
-    function __toString()
+    public function __toString()
     {
         return $this->code;
     }

@@ -1,11 +1,9 @@
 <?php
 
-
 namespace VA\Currency;
 
 use VA\Currency\CurrencyInterface as C;
 use VA\Currency\MoneyInterface as M;
-
 
 /**
  * Currency Service provides facility to exchange currency and compare and create money objects.
@@ -343,5 +341,4 @@ class CurrencyService implements CurrencyServiceInterface, ExchangeServiceInterf
     {
         return $this->exchangeArgs;
     }
-
 }

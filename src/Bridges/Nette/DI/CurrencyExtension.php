@@ -1,6 +1,5 @@
 <?php
 
-
 namespace VA\Currency\Bridges\Nette\DI;
 
 use InvalidArgumentException;
@@ -10,7 +9,6 @@ use VA\Currency\Currency;
 use VA\Currency\CurrencyService;
 use VA\Currency\ExchangeRateProviderInterface;
 use VA\Currency\StaticExchange;
-
 
 /**
  * DI Extension for nette/di.
@@ -123,5 +121,4 @@ class CurrencyExtension extends CompilerExtension
 
         return $currencies;
     }
-
 }

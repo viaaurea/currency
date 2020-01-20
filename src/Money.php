@@ -1,10 +1,8 @@
 <?php
 
-
 namespace VA\Currency;
 
 use InvalidArgumentException;
-
 
 /**
  * Money - immutable value object

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace VA\Currency;
-
 
 /**
  * Helper class encapsulating common exchange rate provider logic.
@@ -12,7 +10,6 @@ namespace VA\Currency;
  */
 class ExchangeHelper
 {
-
     /**
      * Calculate INDIRECT exchange rate.
      *
@@ -26,7 +23,7 @@ class ExchangeHelper
      * @param callable $indirectRateGetter a getter function specific to the particular provider
      * @return float|int|mixed
      */
-    static function calculateRate(
+    public static function calculateRate(
         CurrencyInterface $reference,
         CurrencyInterface $target,
         CurrencyInterface $base,
@@ -52,5 +49,4 @@ class ExchangeHelper
         $refToTarget = static::calculateRate($reference, $target, $reference, $indirectRateGetter);
         return MathHelper::mul($baseToRef, $refToTarget);
     }
-
 }
