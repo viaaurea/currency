@@ -19,6 +19,7 @@ require_once('bootstrap.php');
 
 currencyConstructor();
 currencyGetters();
+currencyStaticFactory();
 currencyComparisons();
 currencyToString();
 
@@ -81,4 +82,16 @@ function currencyConstructor()
     Assert::exception(function () {
         new Currency('');
     }, InvalidArgumentException::class, 'Currency code can not be empty string!');
+}
+
+
+function currencyStaticFactory()
+{
+    $c = Currency::FOO();
+    Assert::type(Currency::class, $c);
+    Assert::same('FOO', $c->code());
+
+    $c = Currency::foobar();
+    Assert::type(Currency::class, $c);
+    Assert::same('foobar', $c->code());
 }

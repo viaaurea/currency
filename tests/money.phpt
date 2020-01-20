@@ -20,6 +20,7 @@ require_once('bootstrap.php');
 
 moneyConstructor();
 moneyGetters();
+moneyStaticFactory();
 moneyToString();
 moneyComparisons();
 
@@ -95,4 +96,18 @@ function moneyGetters()
 function moneyToString()
 {
     Assert::same('10 XBT', (string)new Money(10, 'XBT'));
+}
+
+
+function moneyStaticFactory()
+{
+    $m = Money::FOO(0.0);
+    Assert::type(Money::class, $m);
+    Assert::same(0.0, $m->amount());
+    Assert::same('FOO', $m->currency()->code());
+
+    $m = Money::foobar(100);
+    Assert::type(Money::class, $m);
+    Assert::same(100, $m->amount());
+    Assert::same('foobar', $m->currency()->code());
 }

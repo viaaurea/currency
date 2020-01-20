@@ -56,4 +56,9 @@ final class Currency implements CurrencyInterface
         return $this->code;
     }
 
+
+    public static function __callStatic($name, $arguments)
+    {
+        return new static($name);
+    }
 }

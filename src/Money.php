@@ -74,4 +74,9 @@ final class Money implements MoneyInterface
         return (string)$this->amount() . ' ' . $this->currency()->code();
     }
 
+
+    public static function __callStatic($name, $arguments)
+    {
+        return new static($arguments[0], $name);
+    }
 }
