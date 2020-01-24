@@ -1,6 +1,7 @@
 {
   "name": "viaaurea/currency",
   "description": "Cross-currency money comparison and exchange tool.",
+  "license": "MIT",
   "authors": [
     {
       "name": "Via Aurea, s.r.o.",
