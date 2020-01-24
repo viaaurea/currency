@@ -1,5 +1,9 @@
 # Currency
 
+[![Build Status](https://travis-ci.org/viaaurea/currency.svg?branch=master)](https://travis-ci.org/viaaurea/currency)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/viaaurea/currency)
+[![Powered by](https://img.shields.io/badge/by-Via%20Aurea-orange)](https://www.viaaurea.cz/)
+
 **Cross-currency money comparison and exchange tool.** Framework agnostic.
 
 > 💿 `composer require viaaurea/currency`
