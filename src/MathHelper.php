@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VA\Currency;
 
 use VA\Currency\Exceptions\MathException;
