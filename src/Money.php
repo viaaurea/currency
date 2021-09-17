@@ -16,16 +16,13 @@ final class Money implements MoneyInterface, JsonSerializable
 {
     /** @var int|float */
     private $amount;
-
-    /** @var CurrencyInterface */
-    private $currency;
-
+    private CurrencyInterface $currency;
 
     /**
      * Money value object constructor.
      *
-     * @param int|double      $amount
-     * @param Currency|string $currency
+     * @param int|double $amount
+     * @param CurrencyInterface|string $currency
      */
     public function __construct($amount, $currency)
     {
@@ -42,7 +39,6 @@ final class Money implements MoneyInterface, JsonSerializable
         $this->currency = $currency;
     }
 
-
     /**
      * Get the amount of the value object.
      *
@@ -52,7 +48,6 @@ final class Money implements MoneyInterface, JsonSerializable
     {
         return $this->amount;
     }
-
 
     /**
      * Get the currency of the value object.
@@ -64,15 +59,12 @@ final class Money implements MoneyInterface, JsonSerializable
         return $this->currency;
     }
 
-
     /**
      * Note: type-casting to string is not supposed to be used for formatting.
-     *
-     * @return string
      */
-    function __toString()
+    function __toString(): string
     {
-        return (string)$this->amount() . ' ' . $this->currency()->code();
+        return $this->amount() . ' ' . $this->currency()->code();
     }
 
     public function jsonSerialize(): array
@@ -83,6 +75,9 @@ final class Money implements MoneyInterface, JsonSerializable
         ];
     }
 
+    /**
+     * Allows for constructs like `Money::USD(100)`.
+     */
     public static function __callStatic($name, $arguments)
     {
         return new static($arguments[0], $name);

@@ -14,9 +14,7 @@ use JsonSerializable;
  */
 final class Currency implements CurrencyInterface, JsonSerializable
 {
-    /** @var string */
-    private $code;
-
+    private string $code;
 
     /**
      * Currency constructor.
@@ -36,7 +34,6 @@ final class Currency implements CurrencyInterface, JsonSerializable
         $this->code = $code;
     }
 
-
     /**
      * Currency code.
      * Preferably an ISO code, but it's up to you.
@@ -48,13 +45,9 @@ final class Currency implements CurrencyInterface, JsonSerializable
         return $this->code;
     }
 
-
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->code;
+        return $this->code();
     }
 
     public function jsonSerialize(): string
@@ -62,6 +55,9 @@ final class Currency implements CurrencyInterface, JsonSerializable
         return $this->code();
     }
 
+    /**
+     * Allows for constructs like `Currency::USD()`.
+     */
     public static function __callStatic($name, $arguments)
     {
         return new static($name);
