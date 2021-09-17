@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace VA\Currency;
 
 use InvalidArgumentException;
+use JsonSerializable;
 
 /**
  * Money - immutable value object
  *
  * @copyright Via Aurea, s.r.o.
  */
-final class Money implements MoneyInterface
+final class Money implements MoneyInterface, JsonSerializable
 {
     /** @var int|float */
     private $amount;
@@ -74,6 +75,13 @@ final class Money implements MoneyInterface
         return (string)$this->amount() . ' ' . $this->currency()->code();
     }
 
+    public function jsonSerialize(): array
+    {
+        return [
+            'amount' => $this->amount(),
+            'currency' => $this->currency(),
+        ];
+    }
 
     public static function __callStatic($name, $arguments)
     {

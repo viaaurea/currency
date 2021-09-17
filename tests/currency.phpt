@@ -22,6 +22,7 @@ currencyGetters();
 currencyStaticFactory();
 currencyComparisons();
 currencyToString();
+currencyJson();
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Test definitions ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,6 +57,18 @@ function currencyToString()
     $codeC = 1234;
     $currencyC = new Currency($codeC);
     Assert::same((string)$codeC, (string)$currencyC);
+}
+
+
+function currencyJson()
+{
+    $codeA = 'XBT';
+    $currencyA = new Currency($codeA);
+    Assert::same($codeA, json_decode(json_encode($currencyA), JSON_OBJECT_AS_ARRAY));
+
+    $codeC = 1234;
+    $currencyC = new Currency($codeC);
+    Assert::same((string)$codeC, json_decode(json_encode($currencyC), JSON_OBJECT_AS_ARRAY));
 }
 
 

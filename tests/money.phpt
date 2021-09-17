@@ -22,6 +22,7 @@ moneyConstructor();
 moneyGetters();
 moneyStaticFactory();
 moneyToString();
+moneyJson();
 moneyComparisons();
 
 
@@ -96,6 +97,18 @@ function moneyGetters()
 function moneyToString()
 {
     Assert::same('10 XBT', (string)new Money(10, 'XBT'));
+}
+
+function moneyJson()
+{
+    Assert::equal([
+        'amount' => 10,
+        'currency' => 'XBT',
+    ], json_decode(json_encode(new Money(10, 'XBT')), JSON_OBJECT_AS_ARRAY));
+    Assert::equal([
+        'amount' => 1.3,
+        'currency' => 'EUR',
+    ], json_decode(json_encode(new Money(1.3, 'EUR')), JSON_OBJECT_AS_ARRAY));
 }
 
 
