@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace VA\Currency;
 
 use VA\Currency\CurrencyInterface as C;
+use VA\Currency\Exceptions\SetupException;
 use VA\Currency\MoneyInterface as M;
 
 /**
@@ -254,6 +255,9 @@ class CurrencyService implements CurrencyServiceInterface, ExchangeServiceInterf
 
     public function getExchangeRateProvider(): ExchangeRateProviderInterface
     {
+        if ($this->exchange === null) {
+            throw new SetupException('Unable to perform exchanges: No exchange rate provider present.');
+        }
         return $this->exchange;
     }
 
