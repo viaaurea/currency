@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace VA\Currency;
 
+use VA\Currency\Exceptions\MathException;
 use VA\Currency\Exceptions\SetupException;
 
 /**
@@ -85,7 +86,15 @@ class StaticExchange implements ExchangeRateProviderInterface
         try {
             return ExchangeHelper::calculateRate($referenceCurrency, $target, $from ?? $referenceCurrency, $getter);
         } catch (SetupException $e) {
-            throw new SetupException(sprintf('Exchange from %s: %s', ($from ?? $referenceCurrency)->code(), $e->getMessage()), null, $e);
+            throw new SetupException(
+                sprintf('Exchange from %s: %s', ($from ?? $referenceCurrency)->code(), $e->getMessage()),
+                null, $e
+            );
+        } catch (MathException $e) {
+            throw new MathException(
+                sprintf('Exchange from %s: %s', ($from ?? $referenceCurrency)->code(), $e->getMessage()),
+                null, $e
+            );
         }
     }
 
