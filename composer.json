@@ -34,5 +34,10 @@
     "test:local": "tester tests -C"
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "archive": {
+    "exclude": [
+      "/tests"
+    ]
+  }
 }
