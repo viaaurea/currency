@@ -36,7 +36,8 @@
   },
   "archive": {
     "exclude": [
-      "/tests"
+      "/tests",
+      "/.github"
     ]
   }
 }
