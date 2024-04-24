@@ -18,8 +18,8 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "nette/tester": "^2",
-    "tracy/tracy": "^2.3.0"
+    "nette/tester": "^2.4.3",
+    "tracy/tracy": "^2.9.8"
   },
   "autoload": {
     "psr-4": {
@@ -31,7 +31,8 @@
   },
   "scripts": {
     "test": "@test:local",
-    "test:local": "tester tests -C"
+    "test:local": "tester tests -C",
+    "test:ci": "tester tests"
   },
   "archive": {
     "exclude": [

@@ -1,6 +1,6 @@
 # Currency
 
-[![Build Status](https://travis-ci.org/viaaurea/currency.svg?branch=master)](https://travis-ci.org/viaaurea/currency)
+[![Test Suite](https://github.com/viaaurea/currency/actions/workflows/php-test.yml/badge.svg)](https://github.com/viaaurea/currency/actions/workflows/php-test.yml)
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/viaaurea/currency)
 [![Powered by](https://img.shields.io/badge/by-Via%20Aurea-orange)](https://www.viaaurea.cz/)
 
