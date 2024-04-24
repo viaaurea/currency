@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.3
+
+When no exchange provider is set, upon attempt for an exchange, a `VA\Currency\Exceptions\SetupException` is thrown.
+Previously this resulted in type error or native `TypeError` exception, depending on error reporting settings.
+
+
 ## v2.0
 
 This update aims for simpler public interface, improved reusability and extensibility.
