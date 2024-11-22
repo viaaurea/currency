@@ -71,7 +71,7 @@ class StaticExchange implements ExchangeRateProviderInterface
      * @param CurrencyInterface $from
      * @return float|int
      */
-    public function getExchangeRate(CurrencyInterface $target, CurrencyInterface $from = null)
+    public function getExchangeRate(CurrencyInterface $target, ?CurrencyInterface $from = null)
     {
         $getter = function (CurrencyInterface $target) {
             [$rate, $amount, $type] = $this->getRawExchangeRateSetup($target->code());

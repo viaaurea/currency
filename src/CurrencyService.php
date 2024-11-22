@@ -22,7 +22,7 @@ class CurrencyService implements CurrencyServiceInterface, ExchangeServiceInterf
     protected $exchangeArgs = [];
 
 
-    public function __construct(ExchangeRateProviderInterface $exchange = null)
+    public function __construct(?ExchangeRateProviderInterface $exchange = null)
     {
         $exchange !== null && $this->setExchangeRateProvider($exchange);
     }
@@ -262,7 +262,7 @@ class CurrencyService implements CurrencyServiceInterface, ExchangeServiceInterf
     }
 
 
-    public function setExchangeRateProvider(ExchangeRateProviderInterface $exchange = null): self
+    public function setExchangeRateProvider(?ExchangeRateProviderInterface $exchange = null): self
     {
         $this->exchange = $exchange;
         return $this;

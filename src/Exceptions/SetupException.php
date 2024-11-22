@@ -12,7 +12,7 @@ use Throwable;
  */
 class SetupException extends LogicException
 {
-    public function __construct($message = null, $code = null, Throwable $previous = null)
+    public function __construct($message = null, $code = null, ?Throwable $previous = null)
     {
         parent::__construct($message ?? '', $code ?? 0, $previous);
     }
